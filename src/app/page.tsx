@@ -158,33 +158,34 @@ export default function Home() {
       </div>
 
       {/* Health Status */}
+      {/*
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-          {/* System Status */}
+          System Status
         </h2>
         {health ? (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center">
-              <div className={`text-2xl font-bold ${health.status === 'healthy' ? 'text-green-500' : 'text-red-500'}`}>
-                {health.status.toUpperCase()}
+              <div className={`text-2xl font-bold ${health && health.status === 'healthy' ? 'text-green-500' : 'text-red-500'}`}>
+                {health && health.status.toUpperCase()}
               </div>
               <div className="text-gray-600 dark:text-gray-300">Status</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-500">
-                {health.database.toUpperCase()}
+                {health && health.database.toUpperCase()}
               </div>
               <div className="text-gray-600 dark:text-gray-300">Database</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-500">
-                {health.environment.toUpperCase()}
+                {health && health.environment.toUpperCase()}
               </div>
               <div className="text-gray-600 dark:text-gray-300">Environment</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-bold text-orange-500">
-                {new Date(health.timestamp).toLocaleTimeString()}
+                {health && new Date(health.timestamp).toLocaleTimeString()}
               </div>
               <div className="text-gray-600 dark:text-gray-300">Last Check</div>
             </div>
@@ -193,9 +194,11 @@ export default function Home() {
           <div className="text-center text-gray-500">Loading system status...</div>
         )}
       </div>
+      */}
 
+      {/* Users List */}
+      {/*
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-        {/* Users List */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-full">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
             Users ({users.length})
@@ -226,39 +229,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* API Documentation
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mt-8">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-          API Endpoints
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-md">
-            <div className="font-mono text-sm font-semibold text-green-700 dark:text-green-400">
-              GET /api/health
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-              Check system health and database connection
-            </div>
-          </div>
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-md">
-            <div className="font-mono text-sm font-semibold text-blue-700 dark:text-blue-400">
-              GET /api/users
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-              Fetch all users from the database
-            </div>
-          </div>
-          <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-md">
-            <div className="font-mono text-sm font-semibold text-purple-700 dark:text-purple-400">
-              POST /api/users
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-              Create a new user account
-            </div>
-          </div>
-        </div>
-      </div> */}
+      */}
     </div>
   );
 }
