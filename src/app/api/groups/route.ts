@@ -10,9 +10,10 @@ export async function GET(req: NextRequest) {
     await dbConnect();
     const userID = await getUserIdFromToken(req);
     if (!userID) return successResponse([], 'Not authenticated');
-    const doc = await Entries.findOne({ userID });
-    if (!doc) return successResponse([], 'No groups found');
-    const groups = doc.getGroups();
+    // Use projection to fetch only group names
+    const doc = await Entries.findOne({ userID }, { 'groups.name': 1, _id: 0 });
+    if (!doc || !doc.groups) return successResponse([], 'No groups found');
+    const groups = doc.groups.map((g: { name: string }) => g.name);
     return successResponse(groups, 'Groups fetched successfully');
   } catch (error) {
     return handleApiError(error);
