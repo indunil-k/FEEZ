@@ -91,26 +91,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white p-4 flex flex-col items-center">
-      {/* Navigation Bar */}
-      <nav className="w-full flex flex-col md:flex-row justify-between items-center py-4 px-2 mb-8 bg-gray-800 rounded-xl shadow-lg">
-        <div className="text-3xl font-extrabold tracking-wide mb-2 md:mb-0">FEEZ</div>
-        <div className="flex gap-4 md:gap-6 items-center">
-          <Link href="/" className="text-xl md:text-2xl font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">LOGIN</Link>
-          <Link href="/public" className="text-xl md:text-2xl font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">PUBLIC</Link>
-          {isAuthenticated && (
-            <Link href="/dashboard" className="text-xl md:text-2xl font-bold px-4 py-2 rounded-lg bg-yellow-600 hover:bg-yellow-700 transition-all">DASHBOARD</Link>
-          )}
-          {isAuthenticated && (
-            <button
-              onClick={handleLogout}
-              className="text-xl md:text-2xl font-bold px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 transition-all"
-            >
-              LOGOUT
-            </button>
-          )}
-        </div>
-      </nav>
-
       {/* Login Form */}
       <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
         <h1 className="text-4xl font-extrabold mb-6 text-center">{isAuthenticated ? 'WELCOME' : 'LOGIN'}</h1>

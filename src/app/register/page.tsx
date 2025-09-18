@@ -36,13 +36,6 @@ export default function Register() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white p-4 flex flex-col items-center">
-      <nav className="w-full flex justify-between items-center py-4 px-2 mb-8 bg-gray-800 rounded-xl shadow-lg">
-        <div className="text-3xl font-extrabold tracking-wide">FEEZ</div>
-        <div className="flex gap-6">
-          <Link href="/" className="text-2xl font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">LOGIN</Link>
-          <Link href="/public" className="text-2xl font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">PUBLIC</Link>
-        </div>
-      </nav>
       <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
         <h1 className="text-4xl font-extrabold mb-6 text-center">REGISTER</h1>
         <form onSubmit={handleRegister} className="flex flex-col gap-6">
